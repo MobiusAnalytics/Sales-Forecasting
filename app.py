@@ -51,17 +51,6 @@ if authetication_status:
     data_P2D2  = pd.read_csv('Sales_P2_D1.csv')
     data_P2D2['Date'] = pd.to_datetime(data_P2D2['Date'], infer_datetime_format=True)
     data_P2D2.set_index("Date", drop=True, inplace=True)
-
-     
-    # loading the trained model
-    saved_model1 = open('SARIMA_Best_P1D1.sav', 'rb') 
-    SARIMAX_Model_P1D1 = pickle.load(saved_model1)
-    saved_model2 = open('SARIMA_Best_P2D1.sav', 'rb') 
-    SARIMAX_Model_P2D1 = pickle.load(saved_model2)
-    saved_model3 = open('SARIMA_Best_P1D1.sav', 'rb') 
-    SARIMAX_Model_P1D2 = pickle.load(saved_model3)
-    saved_model4 = open('SARIMA_Best_P2D1.sav', 'rb') 
-    SARIMAX_Model_P2D2 = pickle.load(saved_model4)
     
     
     @st.cache
