@@ -139,6 +139,7 @@ if authetication_status:
             predictions = round(predictions,3)
             with st.container():
                 st.markdown('<p style="font-family:sans-serif; color:black;text-align:left; font-size: 14px;"><b>Table: Forecasted Sales for requested number of future days</b></p>',unsafe_allow_html = True)            
+                predictions = predictions.drop('Sales',axis=0)
                 st.write(round(predictions))
                 predictions =predictions.to_csv(index=True).encode('utf-8')
                 st.download_button(label='Download CSV',data=predictions,mime='text/csv',file_name='Download.csv')    
